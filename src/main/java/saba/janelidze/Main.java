@@ -9,12 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import java.time.Duration;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\sjane\\Downloads\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Saba.Janelidze\\Downloads\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -123,7 +124,8 @@ public class Main {
         assertTrue(commissionAmount.getText().contains("0.12c"));
 
     // #7 დააჭირე ღილაკს 'გადახდა' უნდა ჩაიტვირთოს გვერდი ახალი დომენზე ecommerce.ufc.ge
-        WebElement purchaseBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='inline-block rounded-lg bg-pink-500 px-4 py-2 text-base font-bold text-white disabled:cursor-not-allowed disabled:opacity-80']")));
+//        WebElement purchaseBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='inline-block rounded-lg bg-pink-500 px-4 py-2 text-base font-bold text-white disabled:cursor-not-allowed disabled:opacity-80']")));
+        WebElement purchaseBtn = driver.findElement(By.xpath("//button[@class='inline-block rounded-lg bg-pink-500 px-4 py-2 text-base font-bold text-white disabled:cursor-not-allowed disabled:opacity-80']"));
 
         assertTrue(purchaseBtn.getText().contains("გადახდა"));
         purchaseBtn.click();
