@@ -90,7 +90,7 @@ public class Main {
         WebElement chooseService = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@class='flex select-none items-center overflow-hidden whitespace-nowrap text-sm font-medium text-gray-600 md:left-3 cursor-pointer visible absolute top-2 left-3 right-8']")));
         chooseService.click();
 
-        WebElement fillBalance = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='ბალანსის შევსება']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='ბალანსის შევსება']")));
 
         // "მეტი" - 8 ₾
         WebElement more = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='მეტი']")));
@@ -114,13 +114,13 @@ public class Main {
         WebElement debtText2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='grid items-start justify-items-start gap-3 md:grid-cols-[152px_1fr]']")));
         assertTrue(debtText2.getText().contains("თანხის ოდენობა c"));
 
-        WebElement debtInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='h-10 w-full max-w-[8rem] rounded-lg border border-black/20 px-4 font-medium read-only:bg-grey-200 disabled:bg-grey-200 text-xl' and @name='1327' and @value='10']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='h-10 w-full max-w-[8rem] rounded-lg border border-black/20 px-4 font-medium read-only:bg-grey-200 disabled:bg-grey-200 text-xl' and @name='1327' and @value='10']")));
 
         //ტექსტი: საკომისიო 0.12 c
         WebElement commissionText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mount\"]/main/main/div[1]/div[1]/div[5]/div[1]/div/div[3]/div[1]/button")));
         assertTrue(commissionText.getText().contains("საკომისიო"));
 
-        WebElement commissionAmount = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='border-b border-dotted border-gray-500 font-bold text-gray-600']")));
+        WebElement commissionAmount = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mount\"]/main/main/div[1]/div[1]/div[5]/div[1]/div/div[3]/div[2]/button")));
         assertTrue(commissionAmount.getText().contains("0.12c"));
 
     // #7 დააჭირე ღილაკს 'გადახდა' უნდა ჩაიტვირთოს გვერდი ახალი დომენზე ecommerce.ufc.ge
