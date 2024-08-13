@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static saba.janelidze.Main.*;
+import static saba.janelidze.Startup.wait;
 
 public class Testing {
 

@@ -1,6 +1,6 @@
 package saba.janelidze;
 
-import static saba.janelidze.Main.driver;
+import static saba.janelidze.Startup.driver;
 
 public class Cleanup {
     public static void cleanup(){
